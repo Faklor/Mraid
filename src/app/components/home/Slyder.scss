@@ -1,0 +1,26 @@
+.slyder-wrapper {
+  overflow: hidden;
+  width: 100%;
+  //background: #e0e0e0;
+  height: 3em;
+}
+
+.slyder-track {
+  display: flex;
+  height: 100%;
+  will-change: transform;
+}
+
+.slyder-item {
+  flex: 0 0 auto;
+  height: 100%;
+  padding: 0 1em;
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 50%;
+    width: auto;
+    object-fit: contain;
+  }
+}

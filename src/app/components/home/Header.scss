@@ -1,0 +1,87 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em 2em 1em 2em;
+  background: #fff;
+  //border-bottom: 1px solid #ddd;
+   font-family: 'Minecraftia-Regular', sans-serif;
+
+  &__logo {
+    flex: 0 0 auto;
+    display: flex;
+    h2{
+        margin:0 1em;
+        color:#FF0036;
+        
+    }
+    svg {
+      height: 2em;
+      width: auto;
+    }
+  }
+
+  &__nav {
+    ul {
+      display: flex;
+      gap: 2em;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        font-size: 20px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #FF0036;
+        }
+
+        &.active {
+          color: #FF0036; 
+        }
+      }
+    }
+  }
+}
+
+
+/* ================== адаптация ================== */
+
+/* планшеты */
+@media (max-width: 1024px) {
+  .header {
+    padding: 1.5em;
+
+    &__nav ul {
+      gap: 1.5em;
+
+      li {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+/* мобильные */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__logo {
+      margin-bottom: 1em;
+    }
+
+    &__nav ul {
+      flex-direction: column;
+      gap: 1em;
+
+      li {
+        font-size: 16px;
+      }
+    }
+  }
+}

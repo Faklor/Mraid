@@ -51,7 +51,7 @@
 
 .fly-in {
   opacity: 0;
-  transform: translate(var(--tx, 0), var(--ty, 0));
+  transform: translate(var(--tx, 0), var(--ty, 0)) translateZ(0);
   animation: flyIn 0.8s ease-out forwards;
 }
 

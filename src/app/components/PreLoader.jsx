@@ -1,6 +1,8 @@
 'use client'
 //===============tools======================
 import { useEffect,useState } from 'react'
+import { motion } from 'framer-motion'
+
 
 //================styles====================
 import './PreLoader.scss'
@@ -11,7 +13,7 @@ export default function PreLoader({delayPreLoader}) {
 
     
     const speed = 1.3 // длительность анимации в секундах
-    const delayStep = 0.001 // задержка между блоками
+    const delayStep = 0.01 // задержка между блоками
     //const sliderOffset = 150
     const raidDelay = speed * 0.2
     //const exitDelay = 20000
@@ -42,7 +44,19 @@ export default function PreLoader({delayPreLoader}) {
     }, [])
    
     return (
-        <div className={`preloader-wrapper ${exit ? 'preloader-exit' : ''}`}>
+        <motion.div 
+            className={`preloader-wrapper ${exit ? 'preloader-exit' : ''}`}
+            initial={{ opacity: 0, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 0}}
+            // transition={{ duration: 0.8, ease: 'easeOut' }}
+            transition={{
+                duration: 1,       
+                ease: 'easeInOut',
+                delay: 0.2           
+            }}
+
+        >
             <h1 className="raid-text">
                 <span>m</span><span>r</span><span>a</span><span>i</span><span>d</span><span>.</span><span>i</span><span>o</span>
             </h1>
@@ -52,6 +66,6 @@ export default function PreLoader({delayPreLoader}) {
 
             <div className="scan-line"></div>
 
-        </div>
+        </motion.div>
     )
 }
