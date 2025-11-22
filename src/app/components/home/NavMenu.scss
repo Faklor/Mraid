@@ -1,0 +1,74 @@
+// .navmenu-overlay {
+//   position: fixed;
+//   inset: 0;
+//   background: rgba(0,0,0,0.9);
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   z-index: 999;
+// }
+
+// .navmenu-content {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 1.5em;
+//   text-align: center;
+// }
+
+// .navmenu-item {
+//   font-family: 'SmoochSans-Medium', sans-serif;
+//   font-size: 2.5rem;
+//   color: #fff;
+//   cursor: pointer;
+
+//   &.active {
+//     color: #FF0036;
+//   }
+// }
+
+
+.navmenu-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    //background: url('/pic/nav-back.png') center/cover no-repeat;
+    background: url('/Mraid/pic/nav-back.png') center/cover no-repeat;
+    opacity: 0.5; // прозрачность только для фона
+    z-index: -1;
+  }
+}
+
+.navmenu-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  text-align: center;
+  position: relative; // чтобы быть выше фона
+}
+
+
+
+.navmenu-item {
+  font-family: 'SmoochSans-Medium', sans-serif;
+  font-size: 2.5rem;
+  color: #fff;
+  cursor: pointer;
+
+  &.active {
+    color: #FF0036;
+  }
+
+  &:hover {
+    color: #D4D4D4;
+    transition: 0.5s;
+  }
+}

@@ -5,6 +5,13 @@
 }
 
 
+@font-face {
+  font-family: 'SmoochSans-Medium';
+  /* src: url('/fonts/SmoochSans-Medium.ttf') format('truetype'); */
+  src: url('/Mraid/fonts/SmoochSans-Medium.ttf') format('truetype');
+}
+
+
 * {
   box-sizing: border-box;
   padding: 0;
